@@ -39,8 +39,8 @@ export const Navbar = ()=>{
               </a>
             </div>
           </div>
-{/*           <div className="flex flex-row gap-5">
-            {Socials.map((social) => {
+          <div className="flex flex-row gap-5">
+{/*             {Socials.map((social) => {
               return (
                 <Image
                   src={social.src}
@@ -50,8 +50,8 @@ export const Navbar = ()=>{
                   height={18}
                 />
               );
-            })}
-          </div> */}
+            })} */}
+          </div>
         </div>
       </div>
     );
