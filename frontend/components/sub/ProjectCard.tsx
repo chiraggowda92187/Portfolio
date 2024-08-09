@@ -4,7 +4,6 @@ import { FaGithub, FaLink } from 'react-icons/fa';
 import { FaCodeFork, FaEarthAsia, FaEarthOceania } from 'react-icons/fa6';
 import axios from 'axios';
 import { BACKEND_URL } from '@/constants';
-import { fork } from 'child_process';
 
 interface Props {
   src: string;
