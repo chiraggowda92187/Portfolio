@@ -1,0 +1,134 @@
+Get all the repos ( by default it will get only the public repos based on the access token generated )
+add live links to projects and add it to github 
+Iterate over the repos and For all the repos get individual repos and destructure and send the required things for the frontend 
+    -   Name of the project / repo ,
+    -   Description
+    -   Url of the repo ( for the icon on the frontend )
+    -   Homepage property in the repo (ex :  homepage: null,)
+    -   Images of the website
+Add images of the live website in the github repo in rootDir/images folder.
+Retreive those images in the backend api and send them to the portfolio website so that when ever the a new project is uploaded. The project is automatically added to the protfolio without me everytime hardcoding. And if there are no images make sure to add a custom Project photo built using tailwind ( where the title is designed )
+
+Note : 
+there will be two copies of the r2 that the workers will use ( one in dev mode and another in the production ). Dont get confused because the data which is there in the actua r2 will not be fetched in the dev mode.
+
+While deploying :
+add all the variables in the .dev.vars to the variables in the workers dashboard for the worker. Else there will be internal server error.
+
+User details to be sent : 
+  login ( for icon on frontend )
+  avatar url ( for cool avatar on the frontend )
+  html_url ( for icon to go to github )
+  
+Project Details to be sent : 
+  Name of the project ( Used as part of the key for image fetching in the backend, name->List all objs with prefix as name -> fetch all images in the list -> return images ),
+  Description of the project,
+  fork ( boolean , for symbol on the frontend )
+  html_url ( for the icon on the frontend )
+  homepage ( the website where it is hosted , for the live link icon on the frontend )
+
+
+-> How to add live link to github and then get the live link in github api
+lets say there is a repo which is developed and it is hosted at some xyz.com where to put this in github so that the live url is visible to the github api
+ChatGPT
+To make your live URL visible in your GitHub repository so that it can be accessed via the GitHub API, you can add it to your repository's "About" section. Here are the steps to do this:
+
+Navigate to Your Repository: Go to your repository on GitHub.
+
+Edit the About Section:
+
+On the right side of the repository page, you will see the "About" section.
+Click the gear icon next to the "About" section.
+Add Your Live URL:
+
+In the "Website" field, enter the URL where your project is hosted (e.g., https://xyz.com).
+Click "Save changes."
+Once this is done, the URL will be visible in the "About" section of your repository, and it can be accessed via the GitHub API.
+
+Example
+For a repository named example-repo, your GET request to the GitHub API would look something like this:
+
+bash
+Copy code
+curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yourusername/example-repo
+The response JSON will include the homepage field, which contains the URL you added:
+
+json
+Copy code
+{
+  "id": 123456789,
+  "node_id": "MDEwOlJlcG9zaXRvcnkxMjM0NTY3ODk=",
+  "name": "example-repo",
+  "full_name": "yourusername/example-repo",
+  "private": false,
+  ...
+  "homepage": "https://xyz.com",
+  ...
+}
+This way, anyone accessing your repository through the GitHub API will be able to see the live URL.
+
+
+
+-> suppose there is a repo and we need to make sure there some pics of the website available in the github api. how to add images to the repo
+ChatGPT
+To add images to a GitHub repository and ensure they are accessible via the GitHub API, follow these steps:
+
+Clone the Repository:
+If you haven't already cloned the repository, do so using the command:
+
+bash
+Copy code
+git clone https://github.com/username/repository.git
+cd repository
+Add Images to the Repository:
+Place the images you want to add inside the repository directory. You can organize them in a folder if needed, e.g., images/.
+
+Stage the Changes:
+Use the git add command to stage the images. If you placed them in an images folder, you can add them all at once:
+
+bash
+Copy code
+git add images/
+Commit the Changes:
+Commit the changes with a meaningful commit message:
+
+bash
+Copy code
+git commit -m "Add website images"
+Push the Changes:
+Push the changes to the remote repository:
+
+bash
+Copy code
+git push origin main
+Now the images are in your GitHub repository. To ensure they are accessible via the GitHub API, you can use the GitHub Content API. Here's how you can access the images via the API:
+
+Get Repository Content:
+You can use the GitHub API to list the contents of a repository directory. Replace username, repository, and path/to/images with your specific details:
+
+bash
+Copy code
+curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/username/repository/contents/path/to/images
+Get File Information:
+The API response will include information about the files in the directory, including download URLs. For example:
+
+json
+Copy code
+[
+  {
+    "name": "image1.png",
+    "path": "images/image1.png",
+    "sha": "c5b9a5f49e13d4a2f8a9c1e16d4b8b8b3e4c5b9a",
+    "size": 12345,
+    "url": "https://api.github.com/repos/username/repository/contents/images/image1.png",
+    "html_url": "https://github.com/username/repository/blob/main/images/image1.png",
+    "git_url": "https://api.github.com/repos/username/repository/git/blobs/c5b9a5f49e13d4a2f8a9c1e16d4b8b8b3e4c5b9a",
+    "download_url": "https://raw.githubusercontent.com/username/repository/main/images/image1.png",
+    "type": "file"
+  }
+  // More files...
+]
+The download_url field provides a direct link to the raw image file.
+
+By following these steps, you can add images to your GitHub repository and make them accessible through the GitHub API.
+
