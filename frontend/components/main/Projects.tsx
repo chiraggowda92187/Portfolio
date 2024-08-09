@@ -14,7 +14,7 @@ export const Projects = ()=>{
     const [projects, setProjects] = useState<ProjectDetailsType[] >([])
     useEffect(()=>{
         const getProjects = async ()=>{
-            const response = await axios.get(`${BACKEND_URL}/fetchDetails`)
+            const response = await axios.get(`${BACKEND_URL}/fetchDetails`, {timeout : 9000})
             setProjects(response.data.projectsData)
         }
         getProjects()
