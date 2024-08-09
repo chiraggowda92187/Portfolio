@@ -22,6 +22,7 @@ export const ProjectCard = ({
   live_url,
   github_url,
   imagesKeyList,
+  fork
 }: Props) => {
   const [images, setImages] = useState<string[]>([]);
 
