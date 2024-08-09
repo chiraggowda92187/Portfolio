@@ -31,7 +31,10 @@ export const Navbar = ()=>{
               <a href="#projects" className="cursor-pointer">
                 Projects
               </a>
-              <a href="#projects" className="cursor-pointer">
+              <a
+                href="https://drive.google.com/file/d/1FjAqMB4xcSUO9wt9kvKa7GLe-WUDh9jV/view"
+                className="cursor-pointer"
+              >
                 Resume ( drive link )
               </a>
             </div>
