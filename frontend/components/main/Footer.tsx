@@ -15,9 +15,9 @@ import { RxDiscordLogo, RxGithubLogo, RxInstagramLogo, RxLinkedinLogo, RxTwitter
             <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
               <div className="font-bold text-[16px]">Social Media</div>
               <p className="flex flex-row items-center my-[15px] cursor-pointer z-[25] ">
-                <RxTwitterLogo />
+                <div className ="text-[15px] font-semibold">X</div>
                 <span className="text-[15px] ml-[6px]">
-                  <a href="https://x.com/ChiragG11071954 ">X</a>
+                  <a href="https://x.com/ChiragG11071954 ">X.com</a>
                 </span>
               </p>
               <p className="flex flex-row items-center my-[15px] cursor-pointer z-[25] ">
