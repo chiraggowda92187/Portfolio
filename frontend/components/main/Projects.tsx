@@ -41,6 +41,7 @@ export const Projects = ()=>{
                             live_url = {project.live_url}
                             github_url = {project.html_url}
                             imagesKeyList = {project.imagesKeysList}
+                            fork = {project.fork}
                           />
                         );
                     })

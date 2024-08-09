@@ -4,6 +4,7 @@ import { FaGithub, FaLink } from 'react-icons/fa';
 import { FaCodeFork, FaEarthAsia, FaEarthOceania } from 'react-icons/fa6';
 import axios from 'axios';
 import { BACKEND_URL } from '@/constants';
+import { fork } from 'child_process';
 
 interface Props {
   src: string;
@@ -12,6 +13,7 @@ interface Props {
   live_url: string | null;
   github_url: string;
   imagesKeyList: string[];
+  fork : boolean
 }
 
 export const ProjectCard = ({
@@ -92,6 +94,12 @@ export const ProjectCard = ({
               >
                 <FaEarthAsia className="w-6 h-6 invert" />
               </a>
+            )}
+            {fork && (
+              <div className="cursor-pointer z-[25]"
+              >
+                <FaCodeFork className="w-6 h-6 invert" />
+              </div>
             )}
           </div>
         </div>
