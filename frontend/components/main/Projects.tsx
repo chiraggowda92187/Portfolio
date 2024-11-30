@@ -33,16 +33,26 @@ export const Projects = ()=>{
                 {
                     projects.map((project,index)=>{
                         return (
-                          <ProjectCard
-                          key={index}
-                            src="/NextWebsite.png"
-                            title={project.name.replaceAll("-", " ").charAt(0).toUpperCase() + project.name.replaceAll("-", " ").slice(1)}
-                            description={project.description?project.description : ""}
-                            live_url = {project.live_url}
-                            github_url = {project.html_url}
-                            imagesKeyList = {project.imagesKeysList}
-                            fork = {project.fork}
-                          />
+                          <>
+                            {!project.fork && <ProjectCard
+                              key={index}
+                              src="/NextWebsite.png"
+                              title={
+                                project.name
+                                  .replaceAll('-', ' ')
+                                  .charAt(0)
+                                  .toUpperCase() +
+                                project.name.replaceAll('-', ' ').slice(1)
+                              }
+                              description={
+                                project.description ? project.description : ''
+                              }
+                              live_url={project.live_url}
+                              github_url={project.html_url}
+                              imagesKeyList={project.imagesKeysList}
+                              fork={project.fork}
+                            />}
+                          </>
                         );
                     })
                 }
