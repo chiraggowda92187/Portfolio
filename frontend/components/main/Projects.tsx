@@ -32,9 +32,15 @@ export const Projects = ()=>{
                 /> */}
                 {
                     projects.map((project,index)=>{
+                        let practiceProject = false; 
+                        project.name.split("-").forEach((projectNamePart)=>{
+                            if(projectNamePart==="week" || projectNamePart === "Week" || projectNamePart==="prac"){
+                                practiceProject = practiceProject || true
+                            }
+                        });    
                         return (
                           <>
-                            {!project.fork && <ProjectCard
+                            {!project.fork && !practiceProject && <ProjectCard
                               key={index}
                               src="/NextWebsite.png"
                               title={
