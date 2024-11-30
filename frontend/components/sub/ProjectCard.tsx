@@ -58,7 +58,7 @@ export const ProjectCard = ({
   }, []);
 
   useEffect(() => {
-    console.log('Images:', images);
+    //console.log('Images:', images);
   }, [images]);
 
   return (
