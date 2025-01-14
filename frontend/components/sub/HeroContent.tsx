@@ -41,7 +41,7 @@ export const HeroContent = ()=>{
           <motion.a
             variants={slideInFromLeft(1)}
             className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-            href="https://drive.google.com/file/d/1FjAqMB4xcSUO9wt9kvKa7GLe-WUDh9jV/view"
+            href="https://drive.google.com/drive/folders/1F7XfE_lQMj6znpOMfwgTq7gbkQ5TPeNB"
           >
             Check Out My Resume!
           </motion.a>
