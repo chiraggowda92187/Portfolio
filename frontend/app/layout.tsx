@@ -22,6 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="https://ik.imagekit.io/sd404ejrc/icons/C%20logo?updatedAt=1736881890132"
+        />
+      </head>
       <body 
         className={`${inter.className} bg-[#020005] overflow-y-scroll overflow-x-hidden`}>
           <StarCanvas/>
