@@ -11,6 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Chirag T C",
   description: "This is Chirag's Portfolio",
+  icons:
+    'https://ik.imagekit.io/sd404ejrc/icons/C%20logo?updatedAt=1736881890132',
 };
 
 export default function RootLayout({
