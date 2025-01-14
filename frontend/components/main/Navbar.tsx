@@ -32,10 +32,10 @@ export const Navbar = ()=>{
                 Projects
               </a>
               <a
-                href="https://drive.google.com/file/d/1FjAqMB4xcSUO9wt9kvKa7GLe-WUDh9jV/view"
+                href="https://drive.google.com/drive/folders/1F7XfE_lQMj6znpOMfwgTq7gbkQ5TPeNB?usp=drive_link"
                 className="cursor-pointer"
               >
-                Resume ( drive link )
+                Resume
               </a>
             </div>
           </div>
